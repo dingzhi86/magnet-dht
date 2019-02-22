@@ -1,5 +1,5 @@
 #!usr/bin/python
-# encoding=utf8
+# encoding=utf-8
 
 from http.client import HTTPConnection
 import json
@@ -48,10 +48,7 @@ def exec_rpc(magnet):
         ],
     }
     conn.request(
-        "POST",
-        "/jsonrpc",
-        json.dumps(req),
-        {"Content-Type": "application/json"},
+        "POST", "/jsonrpc", json.dumps(req), {"Content-Type": "application/json"}
     )
 
     res = json.loads(conn.getresponse().read())
